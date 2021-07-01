@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "MyFont";
+    src: url('Assets/font/ComingSans.otf'), format("opentype");
+}
+
+body{
+    font-family: MyFont;
+}
+
+.bg{
+    background: #2b2b2b;
+}
+
+.logo img{
+    $tamImg: 170px;
+    width: $tamImg;
+    height: $tamImg - 90px;
+
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 85%;
+        height: 135px;
+
+        .nav {
+            a{
+                cursor: pointer;
+                text-decoration: none;
+                color: white;
+                font-size: 1.5em;
+
+                padding: 10px 32px;
+                background: #bd2323;
+                border-radius: 0.5em;
+            }
+
+            a:hover{
+                background: #331579;
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    .main{
+        width: 75%;
+        margin: 2em;
+        
+        h2{
+            font-weight: bold;
+            font-size: 2.5em;
+            margin-top: 1.2em;
+        }
+
+        .welcome{
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 0.8em;
+        }
+
+        .title{
+            text-indent: -40px;
+            text-decoration: underline;
+        }
+
+        .text-box{
+            margin-left: 15px;
+            font-size: 1.2em;
+
+            .title{
+                text-indent: -15px;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            .text{
+                text-indent: 15px;
+                line-height: 1.4em;
+
+                .list{
+                    margin-left: 2em;
+                }
+            }
+        }
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        width: 70%;
+        height: 190px;
+        
+        .logo_slogan{
+            display: block;
+            text-align: center;
+            padding-top: 20px;
+
+            .slogan{
+                color: #ffffffb9;
+                font-size: 1.2em;
+                transform: translateY(-5px);
+            }
+        }
+
+        .contato{
+            color: #ffffffb9;
+            display: flex;
+            align-items: center;
+            align-content: center;
+
+            .divider{
+                width: 2px;
+                height: 80px;
+                background: #ffffffb9;
+                transform: translate(15px, -8px);
+            }
+
+            .social{
+                li{
+                    a{
+                        font-size: 1.2em;  
+                    }
+
+                    a:hover{
+                        color: #fff;
+                    }
+                }
+
+                li::marker{
+                    content: "";
+                }
+            }
+        }
+    }
+    
+}

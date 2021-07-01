@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("Assets/font/ComingSans.otf"), format("opentype");
+}
+body {
+  font-family: MyFont;
+}
+
+.bg {
+  background: #2b2b2b;
+}
+
+.logo img {
+  width: 170px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.container .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  height: 135px;
+}
+.container .header .nav a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  padding: 10px 32px;
+  background: #bd2323;
+  border-radius: 0.5em;
+}
+.container .header .nav a:hover {
+  background: #331579;
+  text-decoration: underline;
+}
+.container .main {
+  width: 75%;
+  margin: 2em;
+}
+.container .main h2 {
+  font-weight: bold;
+  font-size: 2.5em;
+  margin-top: 1.2em;
+}
+.container .main .welcome {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+}
+.container .main .title {
+  text-indent: -40px;
+  text-decoration: underline;
+}
+.container .main .text-box {
+  margin-left: 15px;
+  font-size: 1.2em;
+}
+.container .main .text-box .title {
+  text-indent: -15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.container .main .text-box .text {
+  text-indent: 15px;
+  line-height: 1.4em;
+}
+.container .main .text-box .text .list {
+  margin-left: 2em;
+}
+.container .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 70%;
+  height: 190px;
+}
+.container .footer .logo_slogan {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+.container .footer .logo_slogan .slogan {
+  color: #ffffffb9;
+  font-size: 1.2em;
+  transform: translateY(-5px);
+}
+.container .footer .contato {
+  color: #ffffffb9;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.container .footer .contato .divider {
+  width: 2px;
+  height: 80px;
+  background: #ffffffb9;
+  transform: translate(15px, -8px);
+}
+.container .footer .contato .social li a {
+  font-size: 1.2em;
+}
+.container .footer .contato .social li a:hover {
+  color: #fff;
+}
+.container .footer .contato .social li::marker {
+  content: "";
+}
+
+/*# sourceMappingURL=first.css.map */
