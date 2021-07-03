@@ -3,8 +3,8 @@
 <ul>
   <li>Débora Sophia;</li>
   <li>Gabriel Willian;</li>
-  <li>Miguel Angelo;</li>
   <li>Karen Joilly;</li>
+  <li>Miguel Angelo;</li>
   <li>Victória Flauzino;</li>
   <li>Vinícius Roberto;</li> 
 </ul>
