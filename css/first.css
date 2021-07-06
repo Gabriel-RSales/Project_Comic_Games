@@ -4,6 +4,10 @@
 }
 body {
   font-family: MyFont;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .bg {
@@ -21,6 +25,9 @@ body {
   flex-direction: row;
   justify-content: center;
   align-content: center;
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 .container .header {
   display: flex;
@@ -33,7 +40,7 @@ body {
 .container .header .nav a {
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: #ffffff;
   font-size: 1.5em;
   padding: 10px 32px;
   background: #bd2323;
@@ -52,7 +59,7 @@ body {
   font-size: 2.5em;
   margin-top: 1.2em;
 }
-.container .main .welcome {
+.container .main .title-main {
   text-align: center;
   margin-top: 0;
   margin-bottom: 0.8em;
@@ -76,6 +83,62 @@ body {
 }
 .container .main .text-box .text .list {
   margin-left: 2em;
+}
+.container .main.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: space-around;
+  width: 30%;
+  height: 40%;
+  border: 1px solid #808080;
+  border-radius: 1.2em;
+  background: #e1e1e180;
+  padding: 10px 50px;
+}
+.container .main.forms .title-main {
+  align-self: center;
+  margin: 0;
+  padding-bottom: 20px;
+}
+.container .main.forms .form {
+  width: 100%;
+}
+.container .main.forms .form .input-field {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.container .main.forms .form .input-field input {
+  width: 100%;
+  border: none;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0.5em #000000;
+  height: 3rem;
+}
+.container .main.forms .form .input-field label {
+  padding: 0.6em 0.8em;
+}
+.container .main.forms .form .submit {
+  text-align: center;
+}
+.container .main.forms .form .submit button {
+  border: none;
+  border-radius: 0.3em;
+  padding: 5px 15px;
+  background: #331579;
+  color: #fff;
+}
+.container .main.forms .links {
+  padding: 20px 0;
+  font-size: 1.2em;
+}
+.container .main.forms .links a {
+  display: block;
+  text-decoration: none;
+}
+.container .main.forms .links a:hover {
+  text-decoration: underline;
 }
 .container .footer {
   display: flex;
