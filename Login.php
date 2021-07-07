@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -8,14 +11,14 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/first.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <title>Comic Games | Cadastro</title>
+        <title>Comic Games | Entrar</title>
     </head>
 
     <body>
         <header class="container bg">
             <div class="header">
                 <h1 class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="img/Logo.png" alt="Logo_Comic Games">
                     </a>
                 </h1>
@@ -23,32 +26,42 @@
                 <nav class="nav"><a href="#">Jogos</a></nav>
             </div>
         </header>
-        
+            
         <main class="container">
             <div class="main forms">
-                <h2 class="title-main">Fazer Cadastro</h2>
-                <form action="#" method="GET" class="form">
+                <h2 class="title-main">Entrar</h2>
+                <?php
+			        if(isset($_SESSION['msg'])){
+				        echo $_SESSION['msg'];
+				        unset($_SESSION['msg']);
+			        }
+			        if(isset($_SESSION['msgcad'])){
+				        echo $_SESSION['msgcad'];
+				        unset($_SESSION['msgcad']);
+			        }
+		        ?>
+                <form action="setting/valida.php" method="POST" class="form">
                     <div class="input-field form-floating">
-                        <input class="form-control" type="text" id="nome" placeholder="Escreva seu username">
+                        <input name="usuario" class="form-control" type="text" id="nome" placeholder="Escreva seu username">
                         <label for="nome">Nome de usuário</label>
                     </div>
-                    
+        
                     <div class="input-field form-floating">
-                        <input class="form-control" type="text" id="email" placeholder="Escreva seu E-mail">
-                        <label for="email">Email</label>
-                    </div>
-                    
-                    <div class="input-field form-floating">
-                        <input class="form-control" type="password" id="senha" placeholder="Digite sua senha">
+                        <input name="senha" class="form-control" type="password" id="senha" placeholder="Digite sua senha">
                         <label for="senha">Senha</label>
                     </div>
-                    
+        
                     <div class="submit">
-                        <button type="submit">Cadastrar</button>
+                        <input type="submit" name="btnLogin" value="Entrar"/>
                     </div>
                 </form>
+		</p>
+		<p class="text-center text-success">
+			
+		</p>
                 <div class="links">
-                    <a href="Login.html">Fazer login</a>
+                    <a href="EsqueciSenha.php">Esqueceu a sua senha?</a>
+                    <a href="Cadastro.php">Fazer cadastro</a>
                 </div>
             </div>
         </main>
@@ -57,7 +70,7 @@
             <div class="footer">
                 <div class="logo_slogan">
                     <p class="logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="img/Logo.png" alt="Logo_Comic Games">
                         </a>
                     </p>
@@ -77,6 +90,6 @@
                     </ul>
                 </div>
             </div>
-        </footer>	
+        </footer>
     </body>
 </html>

@@ -64,6 +64,10 @@
                     <p class="text">
                         Nosso Cara a Cara é diferente da forma convencional. Ele utiliza os rostos dos seus personagens fictícios preferidos, além de permitir perguntas sobre os traços de suas personalidades, aumentando, assim, a dificuldade do jogo.
                     </p>
+                    <div class="links">
+                        <a href="Login.php">Fazer Login</a></br>
+                        <a href="Cadastro.php">Fazer cadastro</a>
+                </div>
                 </div>
             </article>
         </main>

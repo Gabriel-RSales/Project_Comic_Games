@@ -38,7 +38,7 @@
                     </div>
                 </form>
                 <div class="links">
-                    <a href="Login.html">Fazer login</a>
+                    <a href="Login.php">Fazer login</a>
                 </div>
             </div>
         </main>
