@@ -1,15 +1,15 @@
 <?php
-                session_start();
+    session_start();
 
-                if(!empty($_SESSION['id'])){
+    if(!empty($_SESSION['id'])){
 					
-	                echo "Olá ".$_SESSION['nome'].", seja bem-vindo(a) a Comic Games!";
-	                echo "<a href='sair.php'> Sair </a>";
-                }else{
-                $_SESSION['msg'] = "Faça login novamente.";
-                header("Location: ../Login.php");	
-                }
-            ?> 
+	    echo "Olá ".$_SESSION['nome'].", seja bem-vindo(a) a Comic Games!";
+	    echo "<a href='sair.php'> Sair </a>";
+    }else{
+        $_SESSION['msg'] = "Faça login novamente.";
+        header("Location: ../Login.php");	
+    }
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
