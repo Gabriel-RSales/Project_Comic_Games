@@ -1,5 +1,5 @@
 # Project_Comic_Games
-<p>É um trabalho de Programação Web, feito pelos alunos do 2°:</p>
+<p>É um trabalho de Programação Web, feito pelos alunos do 2° ano do Ensino Médio:</p>
 <ul>
   <li>Débora Sophia;</li>
   <li>Gabriel Willian;</li>
@@ -10,7 +10,7 @@
 </ul>
 
 # Desenvolvimento
-<p>O intuito é fazer um site de Jogos online com o nome Comic Games. Em destaque dos jogos, seria um <b>cara a cara online</b> e um <b>jogo da velha.</b></p>
+<p>O intuito é fazer um site de jogos online de nome Comic Games. Em relação aos jogos, seriam um <b>cara a cara online</b> e um <b>jogo da velha.</b></p>
 
 <p>Para isso utilizamos os recursos:</p>
 <ul>
@@ -18,7 +18,7 @@
   <li>SASS(css)</li>
 </ul>
 
-<p>Dessa forma, com esses recursos, primeiro montamos um mockup e uma wireframe de algumas páginas do site, para que tivessimos uma base.</p>
+<p>Dessa forma, com esses recursos, montamos um mockup e uma wireframe de algumas páginas do site primeiramente, para que tivéssemos uma base.</p>
 <p>
   <h4>• Mockup:</h4>
   <div>
