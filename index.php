@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -24,7 +25,9 @@
 
         <main class="container">
             <article class="main">
-                <h2 class="title-main">Olá cara, seja bem-vindo a Comic Games!</h2>
+                <h2 class="title-main">
+                    Olá <?php if(isset($_SESSION['user'])) {echo $_SESSION['user']['nome'];} else {echo "cara";} ?>, seja bem-vindo a Comic Games!
+                </h2>
 
                 <div class="text-box">
                     <h3 class="title">O que somos?</h3>
@@ -64,10 +67,15 @@
                     <p class="text">
                         Nosso Cara a Cara é diferente da forma convencional. Ele utiliza os rostos dos seus personagens fictícios preferidos, além de permitir perguntas sobre os traços de suas personalidades, aumentando, assim, a dificuldade do jogo.
                     </p>
-                    <div class="links">
-                        <a href="Login.php">Fazer Login</a></br>
-                        <a href="Cadastro.php">Fazer cadastro</a>
                 </div>
+                
+                <div class="links">
+                    <?php if(isset($_SESSION['user'])): ?>
+                        <a href="setting/sair.php">sair</a> 
+                    <?php else:?>
+                        <a href="Login.php">Fazer Login</a>
+                        <a href="Cadastro.php">Fazer cadastro</a>
+                    <?php endif ?>
                 </div>
             </article>
         </main>

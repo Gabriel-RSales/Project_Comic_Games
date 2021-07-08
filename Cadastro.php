@@ -1,30 +1,3 @@
-<?php
-session_start();
-ob_start();
-$btn_cad = filter_input(INPUT_POST, 'btn_cad', FILTER_SANITIZE_STRING);
-
-if($btn_cad){
-	include_once ("setting/conexao.php");
-	$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    //var_dump($dados);
-	$dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
-	
-	$result_usuario = "INSERT INTO usuarios (nome, email, usuario, senha) VALUES (
-					'" .$dados['nome']. "',
-					'" .$dados['email']. "',
-					'" .$dados['usuario']. "',
-					'" .$dados['senha']. "'
-                )";
-	$resultado_usario = mysqli_query($conn, $result_usuario);
-	if(mysqli_insert_id($conn)){
-        $_SESSION['msgcad'] = "Usuário cadastrado com sucesso!";
-		header("Location: Login.php");
-	}else{
-        $_SESSION['msg'] = "Erro ao cadastrar o usuário";
-	}
-    mysqli_close($conn);
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -54,31 +27,30 @@ if($btn_cad){
         <main class="container">
             <div class="main forms">
                 <h2 class="title-main">Fazer Cadastro</h2>
-                <?php
-			        if(isset($_SESSION['msg'])){
-				        echo $_SESSION['msg'];
-				        unset($_SESSION['msg']);
-			        }
-		        ?>
-                <form action="" method="POST" class="form">
+                <form action="setting/cadastrar.php" method="POST" class="form validation" novalidate>
                     <div class="input-field form-floating">
-                        <input name="nome" class="form-control" type="text" id="nome" placeholder="Escreva seu username">
+                        <input name="nome" class="form-control" type="text" id="nome" placeholder="Escreva seu username" required>
                         <label for="nome">Nome</label>
+                        <div class="invalid-feedback"></div>
                     </div>
+
+                    <div class="input-field form-floating">
+                        <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Nome de usuário" required>
+                        <label for="usuario">Nome de usuário</label>
+                        <div class="invalid-feedback"></div>
+                     </div> 
                     
                     <div class="input-field form-floating">
-                        <input name="email" class="form-control" type="text" id="email" placeholder="Escreva seu E-mail">
+                        <input name="email" class="form-control" type="text" id="email" placeholder="Escreva seu E-mail" required>
                         <label for="email">Email</label>
+                        <div class="invalid-feedback"></div>
                     </div>
 
-                    <div class="input-field form-floating">
-                        <input type="text" name="usuario" placeholder="">
-                        <label>Nome de usuário</label>
-                     </div>
 
-                    <div class="input-field form-floating">
-                        <input name="senha" class="form-control" type="password" id="senha" placeholder="Digite sua senha">
+                    <div class="input-field form-floating divPassword">
+                        <input name="senha" class="form-control" type="password" id="senha" placeholder="Digite sua senha" required>
                         <label for="senha">Senha</label>
+                        <div class="invalid-feedback"></div>
                     </div>
                     
                     <div class="submit">
@@ -116,5 +88,6 @@ if($btn_cad){
                 </div>
             </div>
         </footer>	
+        <script type="text/javascript" src="js/validateForms.js"></script>
     </body>
 </html>

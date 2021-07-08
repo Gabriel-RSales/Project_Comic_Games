@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -30,35 +28,25 @@ session_start();
         <main class="container">
             <div class="main forms">
                 <h2 class="title-main">Entrar</h2>
-                <?php
-			        if(isset($_SESSION['msg'])){
-				        echo $_SESSION['msg'];
-				        unset($_SESSION['msg']);
-			        }
-			        if(isset($_SESSION['msgcad'])){
-				        echo $_SESSION['msgcad'];
-				        unset($_SESSION['msgcad']);
-			        }
-		        ?>
-                <form action="setting/valida.php" method="POST" class="form">
+                <form action="setting/valida.php" method="POST" class="form validation <?php if(isset($_SESSION['msgerr'])) {echo "was-validated";} ?>" novalidate>
                     <div class="input-field form-floating">
-                        <input name="usuario" class="form-control" type="text" id="nome" placeholder="Escreva seu username">
-                        <label for="nome">Nome de usuário</label>
+                        <input name="usuario" class="form-control" type="text" id="usuario" placeholder="Escreva seu username" required>
+                        <label for="usuario">Nome de usuário</label>
+                        <div class="invalid-feedback"><?php if(isset($_SESSION['msgerr'])) {echo $_SESSION['msgerr'];} ?></div>
                     </div>
         
-                    <div class="input-field form-floating">
-                        <input name="senha" class="form-control" type="password" id="senha" placeholder="Digite sua senha">
+                    <div class="input-field form-floating divPassword">
+                        <input name="senha" class="form-control" type="password" id="senha" placeholder="Digite sua senha" required>
                         <label for="senha">Senha</label>
+                        <div class="invalid-feedback"><?php if(isset($_SESSION['msgerr'])) {echo $_SESSION['msgerr'];} ?></div>
                     </div>
         
                     <div class="submit">
                         <input type="submit" name="btnLogin" value="Entrar"/>
                     </div>
                 </form>
-		</p>
-		<p class="text-center text-success">
-			
-		</p>
+                <?php if(isset($_SESSION['msgerr'])) {unset($_SESSION['msgerr']);}?>
+
                 <div class="links">
                     <a href="EsqueciSenha.php">Esqueceu a sua senha?</a>
                     <a href="Cadastro.php">Fazer cadastro</a>
@@ -91,5 +79,6 @@ session_start();
                 </div>
             </div>
         </footer>
+        <script type="text/javascript" src="js/validateForms.js"></script>
     </body>
 </html>
