@@ -15,7 +15,7 @@
         <header class="container bg">
             <div class="header">
                 <h1 class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="img/Logo.png" alt="Logo_Comic Games">
                     </a>
                 </h1>
@@ -30,7 +30,7 @@
                 <form action="#" method="GET" class="form">
                     <div class="input-field form-floating">
                         <input class="form-control" type="text" id="email" placeholder="Escreva seu E-mail">
-                        <label for="email">Email</label>
+                        <label for="email">E-mail</label>
                     </div>
         
                     <div class="submit">
@@ -47,7 +47,7 @@
             <div class="footer">
                 <div class="logo_slogan">
                     <p class="logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="img/Logo.png" alt="Logo_Comic Games">
                         </a>
                     </p>

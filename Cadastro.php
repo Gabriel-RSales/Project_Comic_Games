@@ -18,7 +18,7 @@ if($btn_cad){
 	$resultado_usario = mysqli_query($conn, $result_usuario);
 	if(mysqli_insert_id($conn)){
         $_SESSION['msgcad'] = "Usuário cadastrado com sucesso!";
-		header("Location: setting/administrativo.php");
+		header("Location: Login.php");
 	}else{
         $_SESSION['msg'] = "Erro ao cadastrar o usuário";
 	}

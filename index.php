@@ -13,7 +13,7 @@
         <header class="container bg">
             <div class="header">
                 <h1 class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="img/Logo.png" alt="Logo_Comic Games">
                     </a>
                 </h1>
@@ -24,7 +24,7 @@
 
         <main class="container">
             <article class="main">
-                <h2 class="title-main">Olá cara, seja bem-vindo a Comic Games</h2>
+                <h2 class="title-main">Olá cara, seja bem-vindo a Comic Games!</h2>
 
                 <div class="text-box">
                     <h3 class="title">O que somos?</h3>
@@ -76,7 +76,7 @@
             <div class="footer">
                 <div class="logo_slogan">
                     <p class="logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="img/Logo.png" alt="Logo_Comic Games">
                         </a>
                     </p>
