@@ -6,7 +6,7 @@
   <li>Karen Joilly;</li>
   <li>Miguel Angelo;</li>
   <li>Victória Flauzino;</li>
-  <li>Vinícius Roberto;</li> 
+  <li>Vinícius Roberto.</li> 
 </ul>
 
 # Desenvolvimento
