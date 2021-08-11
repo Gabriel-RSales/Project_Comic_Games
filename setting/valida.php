@@ -9,6 +9,14 @@
 		$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 		$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
+		$checkBox = filter_input(INPUT_POST, 'checkBox', FILTER_SANITIZE_STRING);
+		if(isset($checkBox)) {
+			setcookie("lembrar_usuario", $usuario, (time() +(12 * 30 * 24 * 3600)), "/","localhost");
+        
+		//p<strong>Note: </strong> You have been entenred into a cookie </p>
+		}
+
+
 		if((!empty($usuario)) AND (!empty($senha))){
 			//Gerar a senha criptografa
 			//echo password_hash($senha, PASSWORD_DEFAULT);

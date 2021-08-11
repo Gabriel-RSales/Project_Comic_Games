@@ -30,15 +30,23 @@
                 <h2 class="title-main">Entrar</h2>
                 <form action="setting/valida.php" method="POST" class="form validation <?php if(isset($_SESSION['msgerr'])) {echo "was-validated";} ?>" novalidate>
                     <div class="input-field form-floating">
-                        <input name="usuario" class="form-control" type="text" id="usuario" placeholder="Escreva seu username" required>
+                        <input name="usuario" class="form-control" type="text" value="<?php if(isset($_COOKIE['lembrar_usuario'])) {echo $_COOKIE['lembrar_usuario'];} ?>" 
+                        id="usuario" placeholder="Escreva seu username" required>
                         <label for="usuario">Nome de usuário</label>
                         <div class="invalid-feedback"><?php if(isset($_SESSION['msgerr'])) {echo $_SESSION['msgerr'];} ?></div>
                     </div>
-        
+
                     <div class="input-field form-floating divPassword">
                         <input name="senha" class="form-control" type="password" id="senha" placeholder="Digite sua senha" required>
                         <label for="senha">Senha</label>
                         <div class="invalid-feedback"><?php if(isset($_SESSION['msgerr'])) {echo $_SESSION['msgerr'];} ?></div>
+                    </div>
+
+                    <div class="form-check">
+                        <input name="checkBox" class="form-check-input" type="checkbox" value="" id="check" <?php if(isset($_COOKIE['lembrar_usuario'])) {echo "checked";}?>>
+                        <label class="form-check-label" for="check">
+                            Lembrar identificação de usuário
+                        </label>
                     </div>
         
                     <div class="submit">
@@ -81,3 +89,4 @@
         </footer>
     </body>
 </html>
+
