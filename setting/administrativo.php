@@ -1,20 +1,32 @@
+<?php
+    session_start();
+
+    if(!empty($_SESSION['id'])){
+					
+	    echo "Olá ".$_SESSION['nome'].", seja bem-vindo(a) a Comic Games!";
+	    echo "<a href='sair.php'> Sair </a>";
+    }else{
+        $_SESSION['msg'] = "Faça login novamente.";
+        header("Location: ../Login.php");	
+    }
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/bootstrap-reboot.css">
-        <link rel="stylesheet" href="css/first.css">
+        <link rel="stylesheet" href="../css/bootstrap-reboot.css">
+        <link rel="stylesheet" href="../css/first.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <title>Comic Games | Home</title>  
     </head>
     <body>
         <header class="container bg">
-            <div class="header">
+            <div class="header">         
                 <h1 class="logo">
-                    <a href="index.html">
-                        <img src="img/Logo.png" alt="Logo_Comic Games">
+                    <a href="administrativo.php">
+                        <img src="../img/Logo.png" alt="Logo_Comic Games">
                     </a>
                 </h1>
 
@@ -24,8 +36,7 @@
 
         <main class="container">
             <article class="main">
-                <h2 class="title-main">Olá cara, seja bem-vindo a Comic Games</h2>
-
+			
                 <div class="text-box">
                     <h3 class="title">O que somos?</h3>
                     <p class="text">
@@ -64,6 +75,10 @@
                     <p class="text">
                         Nosso Cara a Cara é diferente da forma convencional. Ele utiliza os rostos dos seus personagens fictícios preferidos, além de permitir perguntas sobre os traços de suas personalidades, aumentando, assim, a dificuldade do jogo.
                     </p>
+                    <div class="links">
+                        <a href="../Login.php">Fazer Login</a></br>
+                        <a href="../Cadastro.php">Fazer cadastro</a>
+                </div>
                 </div>
             </article>
         </main>
@@ -72,8 +87,8 @@
             <div class="footer">
                 <div class="logo_slogan">
                     <p class="logo">
-                        <a href="index.html">
-                            <img src="img/Logo.png" alt="Logo_Comic Games">
+                        <a href="administrativo.php">
+                            <img src="../img/Logo.png" alt="Logo_Comic Games">
                         </a>
                     </p>
 

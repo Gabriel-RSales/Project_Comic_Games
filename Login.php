@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -8,14 +9,14 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/first.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <title>Comic Games | Esqueci a senha</title>
+        <title>Comic Games | Entrar</title>
     </head>
 
     <body>
         <header class="container bg">
             <div class="header">
                 <h1 class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="img/Logo.png" alt="Logo_Comic Games">
                     </a>
                 </h1>
@@ -26,19 +27,29 @@
             
         <main class="container">
             <div class="main forms">
-                <h2 class="title-main">Alterar Senha</h2>
-                <form action="#" method="GET" class="form">
+                <h2 class="title-main">Entrar</h2>
+                <form action="setting/valida.php" method="POST" class="form validation <?php if(isset($_SESSION['msgerr'])) {echo "was-validated";} ?>" novalidate>
                     <div class="input-field form-floating">
-                        <input class="form-control" type="text" id="email" placeholder="Escreva seu E-mail">
-                        <label for="email">Email</label>
+                        <input name="usuario" class="form-control" type="text" id="usuario" placeholder="Escreva seu username" required>
+                        <label for="usuario">Nome de usuário</label>
+                        <div class="invalid-feedback"><?php if(isset($_SESSION['msgerr'])) {echo $_SESSION['msgerr'];} ?></div>
+                    </div>
+        
+                    <div class="input-field form-floating divPassword">
+                        <input name="senha" class="form-control" type="password" id="senha" placeholder="Digite sua senha" required>
+                        <label for="senha">Senha</label>
+                        <div class="invalid-feedback"><?php if(isset($_SESSION['msgerr'])) {echo $_SESSION['msgerr'];} ?></div>
                     </div>
         
                     <div class="submit">
-                        <button type="submit">Alterar senha</button>
+                        <input type="submit" name="btnLogin" value="Entrar"/>
                     </div>
                 </form>
+                <?php if(isset($_SESSION['msgerr'])) {unset($_SESSION['msgerr']);}?>
+
                 <div class="links">
-                    <a href="Login.html">Fazer login</a>
+                    <a href="EsqueciSenha.php">Esqueceu a sua senha?</a>
+                    <a href="Cadastro.php">Fazer cadastro</a>
                 </div>
             </div>
         </main>
@@ -47,7 +58,7 @@
             <div class="footer">
                 <div class="logo_slogan">
                     <p class="logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="img/Logo.png" alt="Logo_Comic Games">
                         </a>
                     </p>
@@ -67,6 +78,6 @@
                     </ul>
                 </div>
             </div>
-        </footer>        
+        </footer>
     </body>
 </html>
