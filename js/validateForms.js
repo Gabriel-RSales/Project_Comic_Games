@@ -33,7 +33,7 @@ password.oninput = () => {
     if(!(patterns.numero.test(password.value) && patterns.letrasMaiusculas.test(password.value) && patterns.caracteresEspeciais.test(password.value) && password.value.length >= 6)) {
         password.setCustomValidity(" ");
         password.classList.add('is-invalid');
-        invalidPassword.textContent = "A senha deve ter pelo menos 6 letras, 1 letra maiúscula, 1 número e 1 caracter especial.";
+        invalidPassword.textContent = "A senha deve ter pelo menos 6 caracteres, 1 letra maiúscula, 1 número e 1 caractere especial.";
     } else{
         password.setCustomValidity("");
         password.classList.remove('is-invalid');
