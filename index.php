@@ -19,7 +19,15 @@
                     </a>
                 </h1>
 
-                <nav class="nav"><a href="#">Jogos</a></nav>
+                <nav class="nav">
+                    <?php if(isset($_SESSION['user'])): ?>
+                        <a href="setting/sair.php">sair</a> 
+                    <?php else:?>
+                        <a href="Login.php">Fazer Login</a>
+                        <a href="Cadastro.php">Fazer cadastro</a>
+                    <?php endif ?>
+                    <a href="#">Jogos</a>
+                </nav>
             </div>
         </header>
 
@@ -67,15 +75,6 @@
                     <p class="text">
                         Nosso Cara a Cara é diferente da forma convencional. Ele utiliza os rostos dos seus personagens fictícios preferidos, além de permitir perguntas sobre os traços de suas personalidades, aumentando, assim, a dificuldade do jogo.
                     </p>
-                </div>
-                
-                <div class="links">
-                    <?php if(isset($_SESSION['user'])): ?>
-                        <a href="setting/sair.php">sair</a> 
-                    <?php else:?>
-                        <a href="Login.php">Fazer Login</a>
-                        <a href="Cadastro.php">Fazer cadastro</a>
-                    <?php endif ?>
                 </div>
             </article>
         </main>

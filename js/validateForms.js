@@ -7,7 +7,7 @@ var invalidPassword = document.querySelector('.divPassword').querySelector('div'
 class IpatternSenha {
     numero = /[0-9]/g;
     letrasMaiusculas = /[A-Z]/g;
-    caracteresEspeciais = /[!|@|#|$|%|^|&|*|(|)|-|_]/g;
+    caracteresEspeciais = /[@|_|-]/g;
 }
 
 form.addEventListener('submit', function(event){

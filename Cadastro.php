@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -27,7 +28,7 @@
         <main class="container">
             <div class="main forms">
                 <h2 class="title-main">Fazer Cadastro</h2>
-                <form action="setting/cadastrar.php" method="POST" class="form validation" novalidate>
+                <form action="setting/cadastrar.php" method="POST" class="form validation <?php if(isset($_SESSION['msgerr'])) {echo "was-validated";} ?>" novalidate>
                     <div class="input-field form-floating">
                         <input name="nome" class="form-control" type="text" id="nome" placeholder="Escreva seu username" required>
                         <label for="nome">Nome</label>
@@ -37,13 +38,13 @@
                     <div class="input-field form-floating">
                         <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Nome de usuário" required>
                         <label for="usuario">Nome de usuário</label>
-                        <div class="invalid-feedback"></div>
+                        <div class="invalid-feedback"><?php if(isset($_SESSION['userexists'])) {echo $_SESSION['userexists']; unset($_SESSION['userexists']);} ?></div>
                      </div> 
                     
                     <div class="input-field form-floating">
-                        <input name="email" class="form-control" type="text" id="email" placeholder="Escreva seu E-mail" required>
+                        <input name="email" class="form-control" type="email" id="email" placeholder="Escreva seu E-mail" required>
                         <label for="email">Email</label>
-                        <div class="invalid-feedback"></div>
+                        <div class="invalid-feedback"><?php if(isset($_SESSION['emailexists'])) {echo $_SESSION['emailexists']; unset($_SESSION['emailexists']);} ?></div>
                     </div>
 
 
@@ -52,7 +53,8 @@
                         <label for="senha">Senha</label>
                         <div class="invalid-feedback"></div>
                     </div>
-                    
+
+                    <div class="invalid-cadastro"><?php if(isset($_SESSION['msgerr'])) {echo $_SESSION['msgerr']; unset($_SESSION['msgerr']);}?></div>
                     <div class="submit">
                         <input type="submit" name="btn_cad" value="Cadastrar"/>
                     </div>
